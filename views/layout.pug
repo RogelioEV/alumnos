@@ -1,7 +1,27 @@
 doctype html
 html
   head
-    title= title
+    title= "Universidad del Trabajador"
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap")
+    link(rel="icon", href="/images/favicon.png", type="image/png")
   body
-    block content
+    block header
+      div.menu
+        div.container
+          img.logo(src="/images/u_trabajador.png", alt="", srcset="")
+    div.container
+      block content
+    block footer
+      .menu.footer.noMargin
+        .container
+            a.one-third.column.txtCenter(href="/") Inicio
+            a.one-third.column.txtCenter(href="/alumnos") Listado
+            if logged
+              a.one-third.column.txtCenter(href="/logout") Cerrar Sesión
+            else
+              a.one-third.column.txtCenter(href="/login") Administradores
+            

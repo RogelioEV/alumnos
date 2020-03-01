@@ -1,0 +1,32 @@
+extends layout
+block content
+  div.row
+    h4.u-full-width.title Recuperación de contraseña
+  hr
+  form(action="/alumnos/"+alumno._id, method="post")
+    div.row.marginB
+      div.six.columns.offset-by-three
+        label Matricula
+        p=alumno.matricula
+        label Nombre del alumno
+        p=alumno.nombre
+        if logged
+          label Usuario:
+          p a#{alumno.matricula}
+          label Contraseña:
+          p=alumno.password
+        else
+          b
+            p Para mostrar la contraseña es necesario proporcionar su fecha de nacimiento.
+          label(for='fecha') Fecha de nacimiento
+          input(type="date", name="fecha")
+        if error 
+          b
+            p La fecha ingresada es erronea, por favor intente de nuevo.
+    hr
+    div.row
+      div.one-half.column
+        button.btn(onclick="window.history.back()") Regresar
+      div.one-half.column.txtRight
+        if !logged
+          input.btn(type="submit", value="Enviar")

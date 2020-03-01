@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  div.row.marginB
+    form(action="/alumnos", method="get")
+      div.nine.columns
+        input.u-full-width(type="text", name="query", placeholder="Nombre o matricula")
+      div.three.columns
+        input.btn.u-full-width(type="submit", value="Buscar")
+  div.row
+    table.u-full-width
+      thead
+        tr
+          th Matricula
+          th Nombre
+          if logged
+            th Usuario
+            th Contraseña
+          else
+            th Acciones
+      tbody
+        each alumno in alumnos
+          tr
+            td= alumno.matricula
+            td= alumno.nombre
+            if logged
+              td a#{alumno.matricula}
+              td= alumno.password
+            else
+              td
+                form.alumnoForm(action="/alumnos/"+ alumno._id, method="get")
+                  input.btn.u-full-width(type="submit", value="Ver")

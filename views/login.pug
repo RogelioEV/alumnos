@@ -1,0 +1,16 @@
+extends Layout
+
+block content
+  div(class = 'row')
+    div(class = 'form twelve column')
+        form(action="/login", method = "POST")
+          div(class = 'formBorder txtCenter')
+            div Iniciar Sesión
+          div(class = 'formBody')
+            div(class = 'inputs')
+              input(type="text", class = "u-full-width", placeholder = "Usuario", name="user")
+              input(type="password", name="password", class = 'u-full-width', placeholder = 'Contraseña')
+          div(class = 'formBorder txtRight')
+            input(type="submit", value="Iniciar Sesión", class = 'btn')
+  if(error)
+    div Ocurrio un error

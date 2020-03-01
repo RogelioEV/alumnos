@@ -1,5 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.row
+    div.form.one-half.column
+      form(action="/alumnos", method= 'GET')
+        div.formBorder.txtCenter
+          div Buscar Credenciales
+        div.formBody
+          div.inputs
+            input.u-full-width.noMargin(type="text", placeholder = "Nombre, Apellido, Matricula", name= 'query')
+        div.formBorder.txtRight
+          input.btn(type="submit", value="Buscar")
+    div.form.one-half.column
+      form(action="http://www.i-escolar.com/muralweb/login", method = "POST")
+        div.formBorder.txtCenter
+          div Iniciar Sesión
+        div.formBody
+          div.inputs
+            input.hidden(type="text", name="EscuelaNombre", value="UniversidadCarolina")
+            input.u-full-width(type="text", placeholder = "Usuario", name="UsuarioNombre")
+            input.u-full-width(type="password", name="password", placeholder = 'Contraseña')
+        div(class = 'formBorder txtRight')
+          input.btn(type="submit", value="Iniciar Sesión")
+
