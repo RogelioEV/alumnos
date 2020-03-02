@@ -96,6 +96,9 @@ input[type="text"]:hover {
 .scrolls {
   overflow-x: scroll; }
 
+.btnRow .column {
+  width: 48%; }
+
 @medio (max-width: 700px) {
   .btn {
     padding: 0px;
