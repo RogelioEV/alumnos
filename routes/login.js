@@ -8,7 +8,7 @@ router.get("/", (req, res, next) => {
 });
 router.post("/", async (req, res) => {
   try {
-    var user = req.body.user;
+    var user = req.body.user.toLowerCase();
     var doc = await Usuario.findOne({ user });
     if (!doc) throw new Error("No hay usuario");
     var logged = await bcrypt.compare(req.body.password, doc.password);
