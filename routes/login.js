@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
     req.session.user = doc;
     res.redirect("/alumnos");
   } catch (e) {
-    res.send(e.message);
+    res.render("login", { error: true });
   }
 });
 module.exports = router;

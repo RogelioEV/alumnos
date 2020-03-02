@@ -18,10 +18,16 @@ html
     block footer
       .menu.footer.noMargin
         .container
-            a.one-third.column.txtCenter(href="/") Inicio
-            a.one-third.column.txtCenter(href="/alumnos") Listado
+            a.one-third.column.txtCenter(href="/") 
+              p Inicio
+            a.one-third.column.txtCenter(href="/alumnos") 
+              p Listado
             if logged
-              a.one-third.column.txtCenter(href="/logout") Cerrar Sesión
+              a.one-third.column.txtCenter(href="/logout") 
+                p Cerrar Sesión
             else
-              a.one-third.column.txtCenter(href="/login") Administradores
+              a.one-third.column.txtCenter(href="/login") 
+                p Administradores
+
+    script(src="/javascripts/main.js")
             

@@ -27,7 +27,7 @@ input[type="text"]:hover {
 
 .menu {
   background-color: #0d185b;
-  padding: 25px 0;
+  padding: 2em 0;
   margin-bottom: 2em; }
 
 .marginB {
@@ -44,7 +44,7 @@ input[type="text"]:hover {
   margin-bottom: 0; }
 
 .form {
-  margin-top: 50px; }
+  margin-top: 2em; }
 
 .txtCenter {
   text-align: center; }
@@ -63,14 +63,14 @@ input[type="text"]:hover {
   color: white;
   font-weight: 700;
   font-size: 1.5em;
-  padding: 12.5px 25px; }
+  padding: 0.5em 1em; }
 
 .inputs {
   padding: 8vh 0; }
 
 .formBody {
   background-color: #cccccc;
-  padding: 0 25px; }
+  padding: 0 2em; }
 
 .btn {
   background-color: #0d185b !important;
@@ -79,14 +79,22 @@ input[type="text"]:hover {
   margin: 0; }
 
 .footer {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   bottom: 0;
-  min-width: 100%; }
+  min-width: 100%;
+  padding: 0 0 0.5em 0;
+  margin-top: 2em; }
   .footer a {
     color: white;
     text-decoration-line: none; }
   .footer a:hover {
     color: #0a68cc; }
+  .footer p {
+    margin: 0.5em 0 0 0; }
+
+.scrolls {
+  overflow-x: scroll; }
 
 @medio (max-width: 700px) {
   .btn {
