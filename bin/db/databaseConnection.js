@@ -5,7 +5,7 @@ Utiliza el módulo mongoose.
 */
 
 const uri =
-  "mongodb+srv://User1:toDUPmWcf4sQNlrk@cluster0-7bi2h.mongodb.net/UDT";
+  "uri";
 
 const mongoose = require("mongoose");
 
