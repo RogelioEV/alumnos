@@ -1,3 +1,10 @@
+/*
+Modelo de usuarios administrativos.
+
+Es la plantilla para crear, leer y modificar los documentos de administrativos en la base de datos.
+
+*/
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 var userSchema = new mongoose.Schema({
@@ -15,6 +22,9 @@ var userSchema = new mongoose.Schema({
   }
 });
 
+/*
+Middleware para hashear la contraseña y no se almacene directamente en la base de datos. Se utiliza el hash bcrypt.
+*/
 userSchema.pre("save", async function(next) {
   var user = this;
   if (user.isModified("password")) {
@@ -23,6 +33,8 @@ userSchema.pre("save", async function(next) {
 
   next();
 });
+
+
 var UserModel = mongoose.model("usuario", userSchema);
 
 module.exports = UserModel;

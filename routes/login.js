@@ -6,6 +6,11 @@ const Usuario = require("../bin/db/models/usuario");
 router.get("/", (req, res, next) => {
   res.render("login");
 });
+
+/*
+Punto de entrada del formulario para iniciar sesión como administrativo.
+Los errores dan información de qué está mal, pero nunca se envían, solo los usé para debuggear.
+*/
 router.post("/", async (req, res) => {
   try {
     var user = req.body.user.toLowerCase();

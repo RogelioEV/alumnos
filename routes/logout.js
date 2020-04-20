@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-
+//Logout
 router.get("/", (req, res) => {
   if (req.cookies.user_sid && req.session.user) {
     res.clearCookie("user");
